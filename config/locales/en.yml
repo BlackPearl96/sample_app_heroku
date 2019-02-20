@@ -1,4 +1,7 @@
 en:
+  messenger: "sorry, Not found !"
+  welcome: "Welcome to the Sample App!"
+  base_title: "Ruby on Rails Tutorial Sample App"
   static_pages:
     home:
       title: "Welcome To The Sample App"
@@ -44,6 +47,8 @@ en:
       about: About
       contact: Contact
       help: Help
+      application:
+        rubyrails: "Ruby on Rails Tutorial Sample App"
     header:
       home: Home
       help: Help
@@ -51,7 +56,13 @@ en:
       sample: Sample App
   users:
     new:
-      title: SIGN UP!
-    application:
-      rubyrails: "Ruby on Rails Tutorial Sample App"
-  base_title: "Ruby on Rails Tutorial Sample App"
+      title: Sign Up
+      create: "Create my account"
+      confir: "Password confirmation"
+    show:
+      title: "Ruby on Rails Tutorial Sample App"
+  shared:
+    error_messages:
+      status: "The form contains"
+      error: "error"
+
