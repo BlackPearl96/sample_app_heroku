@@ -10,13 +10,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.activated.paginate page: params[:page],
-      per_page: Settings.per_page
+     per_page: Settings.per_page
   end
 
   def show
     redirect_to root_path && return unless @user.activated?
     @microposts = @user.microposts.paginate page: params[:page],
-      per_page: Settings.per_page
+     per_page: Settings.per_page
   end
 
   def create
@@ -50,6 +50,22 @@ class UsersController < ApplicationController
   end
 
   def edit; end
+
+  def following
+    @title = t "following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate page: params[:page],
+     per_page: Settings.per_page
+    render "show_follow"
+  end
+
+  def followers
+    @title = t "follower"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate page: params[:page],
+     per_page: Settings.per_page
+    render "show_follow"
+  end
 
   private
 

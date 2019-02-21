@@ -7,7 +7,8 @@ Bundler.require(*Rails.groups)
 module SampleApp
   class Application < Rails::Application
     config.load_defaults 5.2
-    config.time_zone = Settings.time_zone
+    # Include the authenticity token in remote forms.
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
 

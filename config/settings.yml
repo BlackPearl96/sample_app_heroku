@@ -17,4 +17,6 @@ user_info:
 micropost_html:
   size: 50
 time_zone: "Hanoi"
+show_follow:
+  size: 30
 picture_size: 5
