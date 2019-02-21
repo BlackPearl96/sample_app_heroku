@@ -7,6 +7,12 @@ en:
   logged: "Please log in."
   del: "User deleted"
   notdel: "unsuccessfully_user"
+  sub: "Account activation"
+  pls: "Please check your email to activate your account."
+  no_act:  "Account not activated.
+    Please check your email for the activation link. "
+  account_activate: "Account activated!"
+  invalid: "Invalid activation link"
   static_pages:
     home:
       title: "Welcome To The Sample App"
@@ -60,9 +66,8 @@ en:
       help: Help
       login: Log in
       sample: Sample App
-      pro: "Profile"
+      pro: "profile"
       set: "Settings"
-      user: "User"
   users:
     new:
       title: Sign Up
@@ -80,7 +85,8 @@ en:
     index:
       title: "All User"
     user:
-      confirm: "You sure?"
+      conf: "You sure?"
+      del: "Delete"
   shared:
     error_messages:
       status: "The form contains"
@@ -92,3 +98,9 @@ en:
       signup: Sign up now !
       user: "New user? "
       rem: "Remember me on this computer"
+  user_mailer:
+    account_html:
+      act: "Activated"
+    wel: "Welcome to the Sample App! Click on the link below to activate your
+      account:"
+    title: "Sample App"
