@@ -2,6 +2,7 @@ en:
   messenger: "sorry, Not found !"
   welcome: "Welcome to the Sample App!"
   base_title: "Ruby on Rails Tutorial Sample App"
+  error: "Invalid email/password combination"
   static_pages:
     home:
       title: "Welcome To The Sample App"
@@ -51,8 +52,9 @@ en:
         rubyrails: "Ruby on Rails Tutorial Sample App"
     header:
       home: Home
+      logout: Log out
       help: Help
-      login: log in
+      login: Log in
       sample: Sample App
   users:
     new:
@@ -64,5 +66,10 @@ en:
   shared:
     error_messages:
       status: "The form contains"
-      error: "error"
-
+      errors: "error"
+  sessions:
+    new:
+      title: Welcome To Sample App
+      login: Log in
+      signup: Sign up now !
+      user: "New user? "
