@@ -5,3 +5,4 @@ user:
     max_length: 255
   password:
     min_length: 6
+checked: 1

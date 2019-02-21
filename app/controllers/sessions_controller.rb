@@ -1,13 +1,17 @@
 class SessionsController < ApplicationController
+  before_action :load_user, only: :create
+
   def new; end
 
   def create
-    user = User.find_by email: params[:session][:email].downcase
-    # if user && user.authenticate(params[:session][:password])
-    if user&.authenticate(params[:session][:password])
-      flash[:success] = t "welcome"
-      log_in user
-      redirect_to user
+    if @user.authenticate(params[:session][:password])
+      log_in @user
+      if params[:session][:remember_me] == Settings.checked
+        remember @user
+      else
+        forget @user
+      end
+      redirect_to @user
     else
       flash[:danger] = t "error"
       render :new
@@ -15,7 +19,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_path
+  end
+  private
+  def load_user
+    @user = User.find_by email: params[:session][:email].downcase
+    return if @user
+    flash[:danger] =  t "error"
+    render :new
   end
 end
