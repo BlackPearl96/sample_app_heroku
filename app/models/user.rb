@@ -1,9 +1,10 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
   scope :activated, ->{where activated: true}
-
+  scope :micro_post, ->{where "user_id = ?", id}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :name,  presence: true, length:
     {maximum: Settings.user.name.max_length}
@@ -65,6 +66,10 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.pass_rs.rs_sent_at.hours.ago
+  end
+
+  def feed
+    Micropost.micro_post
   end
 
   private

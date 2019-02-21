@@ -7,7 +7,7 @@ class AccountActivationsController < ApplicationController
       flash[:success] = t "account_activate"
       redirect_to user
     else
-      flash[:danger] = t "invalid"
+      flash[:danger] = t "invailid"
       redirect_to root_path
     end
   end
