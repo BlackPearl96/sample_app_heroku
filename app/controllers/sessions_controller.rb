@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       else
         forget @user
       end
-      redirect_to @user
+      redirect_back_or @user
     else
       flash[:danger] = t "error"
       render :new
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   def load_user
     @user = User.find_by email: params[:session][:email].downcase
     return if @user
-    flash[:danger] =  t "error"
+    flash[:danger] = t "error"
     render :new
   end
 end

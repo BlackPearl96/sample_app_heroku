@@ -3,6 +3,10 @@ en:
   welcome: "Welcome to the Sample App!"
   base_title: "Ruby on Rails Tutorial Sample App"
   error: "Invalid email/password combination"
+  update: "Profile updated"
+  logged: "Please log in."
+  del: "User deleted"
+  notdel: "unsuccessfully_user"
   static_pages:
     home:
       title: "Welcome To The Sample App"
@@ -56,13 +60,27 @@ en:
       help: Help
       login: Log in
       sample: Sample App
+      pro: "Profile"
+      set: "Settings"
+      user: "User"
   users:
     new:
       title: Sign Up
       create: "Create my account"
       confir: "Password confirmation"
+      button_text: "Create my account"
     show:
       title: "Ruby on Rails Tutorial Sample App"
+    edit:
+      title: "Update your profile"
+      conf: "Password Confirmation"
+      save: "Save changes"
+      change: "change"
+      button_text: "Create my account"
+    index:
+      title: "All User"
+    user:
+      confirm: "You sure?"
   shared:
     error_messages:
       status: "The form contains"
