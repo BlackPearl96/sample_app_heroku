@@ -1,25 +1,28 @@
 class UsersController < ApplicationController
-  before_action :load_user, except: %i(index new create)
-  before_action :logged_in_user, except: %i(show new create)
-  before_action :correct_user, only: %i(edit update)
+  before_action :load_user, except: [:index, :new, :create]
+  before_action :logged_in_user, except: [:show, :new, :create]
+  before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
   def new
     @user = User.new
   end
 
+  def index
+    @users = User.activated.paginate page: params[:page],
+      per_page: Settings.per_page
+  end
+
   def show
-    return if @user
-    flash[:danger] = t "messenger"
-    redirect_to root_path
+    redirect_to root_path && return unless @user.activated?
   end
 
   def create
     @user = User.new user_params
     if @user.save
-      log_in @user
-      flash[:success] = t "welcome"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t "pls"
+      redirect_to root_path
     else
       render :new
     end
@@ -35,12 +38,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-    @users = User.paginate page: params[:page]
-  end
-
-  def update
-    if @user.update_attributes user_params
+  def updates
+    if @user.update_attributes(user_params)
       flash[:success] = t "update"
       redirect_to @user
     else
@@ -48,7 +47,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit;end
+  def edit; end
 
   private
 
