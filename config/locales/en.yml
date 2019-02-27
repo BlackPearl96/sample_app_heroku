@@ -13,6 +13,23 @@ en:
     Please check your email for the activation link. "
   account_activate: "Account activated!"
   invalid: "Invalid activation link"
+  no_act: "Account not activated.
+    Please check your email for the activation link. "
+  account_activate: "Account activated!"
+  invailid: "Invalid activation link"
+  check_ex:
+    pas_rs: "Password reset has expired."
+  update:
+    pas_rs: "Password has been reset."
+    cant_empty: "can't be empty"
+  email:
+    pas_rs: "Email sent with password reset instructions"
+    not_found: "Email address not found"
+  password_reset: "Password reset"
+  update_password: "Update password"
+  controller:
+    concerns:
+      email_not_found: "Email address not found"
   static_pages:
     home:
       title: "Welcome To The Sample App"
@@ -104,3 +121,15 @@ en:
     wel: "Welcome to the Sample App! Click on the link below to activate your
       account:"
     title: "Sample App"
+    reset_pass: "Reset password"
+    pass_reset: "Password reset"
+    click_link: "To reset your password click the link below:"
+    this_link: "This link will expire in two hours."
+    status: "If you did not request your password to be reset,
+      please ignore this email and your password will stay as it is."
+  password_reset:
+    edit:
+      reset_pass: "Reset Password"
+    new:
+      forgot_pass: "Forgot password"
+
