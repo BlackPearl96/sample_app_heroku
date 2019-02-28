@@ -9,6 +9,8 @@ en:
   notdel: "unsuccessfully_user"
   sub: "Account activation"
   pls: "Please check your email to activate your account."
+  post_delete: "Micropost deleted"
+  can_post_delete: "Micropost can't be deleted"
   no_act:  "Account not activated.
     Please check your email for the activation link. "
   account_activate: "Account activated!"
@@ -17,6 +19,8 @@ en:
     Please check your email for the activation link. "
   account_activate: "Account activated!"
   invailid: "Invalid activation link"
+  micropost_created: "Micropost created!"
+  confirm: "You sure?"
   check_ex:
     pas_rs: "Password reset has expired."
   update:
@@ -27,6 +31,8 @@ en:
     not_found: "Email address not found"
   password_reset: "Password reset"
   update_password: "Update password"
+  models:
+    size_less: "should be less than 5MB"
   controller:
     concerns:
       email_not_found: "Email address not found"
@@ -38,6 +44,7 @@ en:
       url_home: "https://www.railstutorial.org/"
       content-home: "This is the home page for the %{ruby_link} sample application"
       signup: "Sign up now!"
+      micro_feed: "Micropost Feed"
     help:
       title: "Help"
       ruby: "Ruby on Rails Tutorial"
@@ -99,6 +106,7 @@ en:
       save: "Save changes"
       change: "change"
       button_text: "Create my account"
+      button_text: "Save changes"
     index:
       title: "All User"
     user:
@@ -108,6 +116,12 @@ en:
     error_messages:
       status: "The form contains"
       errors: "error"
+    user_info:
+      micropost: "micropost"
+      view: "view my profile"
+    micropost_form:
+      post: "Post"
+      placeholder: "Compose new micropost..."
   sessions:
     new:
       title: Welcome To Sample App
@@ -132,4 +146,3 @@ en:
       reset_pass: "Reset Password"
     new:
       forgot_pass: "Forgot password"
-
