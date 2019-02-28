@@ -14,13 +14,9 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
-    if @micropost.destroy
-      flash[:success] = t "post_delete"
-      redirect_to request.referrer || root_path
-    else
-      flash[:danger] = t "can_post_delete"
-      redirect_to root_path
-    end
+    @micropost.destroy
+    flash[:success] = t "micro_del"
+    redirect_to request.referrer || root_path
   end
 
   private
@@ -31,8 +27,6 @@ class MicropostsController < ApplicationController
 
   def correct_user
     @micropost = current_user.microposts.find_by(id: params[:id])
-    return if @micropost
-    flash[:danger] = t "messenger"
-    redirect_to root_path
+    redirect_to root_path unless @micropost
   end
 end

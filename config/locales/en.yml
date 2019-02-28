@@ -21,6 +21,15 @@ en:
   invailid: "Invalid activation link"
   micropost_created: "Micropost created!"
   confirm: "You sure?"
+  no_act: "Account not activated.
+    Please check your email for the activation link. "
+  account_activate: "Account activated!"
+  invailid: "Invalid activation link"
+  micropost_created: "Micropost created!"
+  confirm: "You sure?"
+  micro_del: "Micropost deleted"
+  follower: "Followers"
+  following: "Following"
   check_ex:
     pas_rs: "Password reset has expired."
   update:
@@ -112,6 +121,13 @@ en:
     user:
       conf: "You sure?"
       del: "Delete"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
+    show_follow:
+      micropost: "Microposts"
+      view_profile: "view my profile"
   shared:
     error_messages:
       status: "The form contains"
@@ -122,6 +138,9 @@ en:
     micropost_form:
       post: "Post"
       placeholder: "Compose new micropost..."
+    stats:
+      following: "following"
+      follower: "followers"
   sessions:
     new:
       title: Welcome To Sample App
